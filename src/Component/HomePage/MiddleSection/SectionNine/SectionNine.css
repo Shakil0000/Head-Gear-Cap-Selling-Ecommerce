@@ -1,0 +1,22 @@
+/* Container for the entire section */
+.SectionNine-container {
+    width: 100%;
+    overflow: hidden; /* Ensures no overflow on small screens */
+    position: relative;
+}
+
+/* Styling for the full-width responsive image */
+.SectionNine-image {
+    width: 100%;
+    height: auto;
+    display: block; /* Removes any gap under the image */
+    object-fit: cover;
+}
+
+/* Additional responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .SectionNine-image {
+        width: 100%; /* Ensures image remains full width */
+        height: auto;
+    }
+}

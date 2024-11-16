@@ -1,0 +1,25 @@
+.mainMenu-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    background-color: #1d1d1e;
+  }
+  
+  .mainMenu-item {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fbfbfb;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+  }
+  
+  .mainMenu-item:hover {
+    color: #007bff;
+  }
+  

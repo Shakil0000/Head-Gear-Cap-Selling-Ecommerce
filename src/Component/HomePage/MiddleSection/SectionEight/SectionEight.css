@@ -1,0 +1,47 @@
+/* Container for the entire section */
+.SectionEight-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Grid container for images */
+.SectionEight-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Styling for each image */
+.SectionEight-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styling for the heading below the images */
+.SectionEight-heading {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .SectionEight-grid {
+        grid-template-columns: auto auto; /* Adjust columns for responsiveness */
+    }
+
+    .SectionEight-image {
+        max-width: 100%;
+    }
+
+    .SectionEight-heading {
+        font-size: 1.3rem;
+    }
+}

@@ -1,0 +1,18 @@
+.sectionSix-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .sectionSix-image {
+    max-width: 60%;
+    width: 100%;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .sectionSix-image {
+      max-width: 90%; /* Increase max-width for smaller screens */
+    }
+  }
+  

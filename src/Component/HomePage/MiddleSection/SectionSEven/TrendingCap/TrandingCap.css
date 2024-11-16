@@ -1,0 +1,10 @@
+.TrandingCap-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.TrandingCap-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}

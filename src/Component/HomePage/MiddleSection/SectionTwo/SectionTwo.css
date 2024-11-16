@@ -1,0 +1,14 @@
+.sectionTwo-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 16px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .sectionTwo-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  

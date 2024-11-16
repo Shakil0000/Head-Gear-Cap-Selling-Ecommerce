@@ -1,0 +1,151 @@
+.ProductDetails-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ProductDetails-imageRow {
+  display: flex;
+  width: 100%;
+}
+
+.ProductDetails-mainImage {
+  flex: 1;
+  width: 50%;
+}
+
+@media (max-width: 600px) {
+  .ProductDetails-imageRow {
+    flex-direction: column;
+  }
+
+  .ProductDetails-mainImage {
+    width: 100%;
+  }
+}
+
+.ProductDetails-mainSection {
+  display: flex;
+  width: 80%; /* Added margin on both sides */
+  padding: 20px;
+  gap: 50px;
+}
+
+.ProductDetails-left {
+  flex: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align items at the top */
+  text-align: left;
+}
+
+.ProductDetails-right {
+  flex: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: justify;
+}
+
+.ProductDetails-price {
+  font-size: 1.2em;
+}
+
+.ProductDetails-lineThrough {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 8px;
+}
+
+.ProductDetails-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.ProductDetails-addToCart,
+.ProductDetails-buyNow {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #050504;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.ProductDetails-addToCart:hover,
+.ProductDetails-buyNow:hover {
+  background-color: #ff9800;
+}
+
+.ProductDetails-info {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  font-size: small;
+}
+
+.ProductDetails-shareButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.ProductDetails-share {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: #3b5998;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.ProductDetails-share.facebook {
+  background-color: #3b5998;
+}
+
+.ProductDetails-share.twitter {
+  background-color: #1da1f2;
+}
+
+.ProductDetails-share.pinterest {
+  background-color: #bd081c;
+}
+
+.ProductDetails-share:hover {
+  opacity: 0.9;
+}
+
+.ProductDetails-extraImagesRow {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.ProductDetails-extraImage {
+  flex: 1;
+  width: 50%;
+}
+
+@media (max-width: 600px) {
+  .ProductDetails-extraImagesRow {
+    flex-direction: column;
+  }
+
+  .ProductDetails-extraImage {
+    width: 100%;
+  }
+
+  .ProductDetails-mainSection {
+    flex-direction: column;
+  }
+}

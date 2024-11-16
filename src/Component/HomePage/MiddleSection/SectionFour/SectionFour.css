@@ -1,0 +1,27 @@
+.sectionFour-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .sectionFour-container {
+    display: grid;
+    grid-template-columns: 2.6fr 0.6fr;
+    gap: 0;
+    width: 80%;
+  }
+  
+  .sectionFour-image1 img,
+  .sectionFour-image2 img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .sectionFour-container {
+      grid-template-columns: 1fr;
+      width: 100%;
+    }
+  }
+  

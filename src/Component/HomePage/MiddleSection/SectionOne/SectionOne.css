@@ -1,0 +1,18 @@
+.sectionOne-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .sectionOne-image {
+    width: 70%;
+    margin-bottom: 20px; /* Adds space between the images */
+  }
+  
+  @media (max-width: 768px) {
+    .sectionOne-image {
+      width: 90%;
+    }
+  }
+  

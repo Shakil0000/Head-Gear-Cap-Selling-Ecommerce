@@ -1,0 +1,126 @@
+/* Main container styling */
+.navBar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: purple;
+  color: white;
+  position: relative;
+}
+
+/* Left section */
+.navBar-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.navBar-icon {
+  font-size: 1.5em;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+/* Center section */
+.navBar-center {
+  flex: 2;
+  text-align: center;
+}
+
+.navBar-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Right section */
+.navBar-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navBar-container {
+    padding: 8px 15px;
+  }
+
+  .navBar-title {
+    font-size: 1.2em;
+  }
+
+  .navBar-icon {
+    font-size: 1.2em;
+  }
+}
+
+/* Left Sidebar menu styling */
+.navbar-popup-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+/* Close icon styling */
+.navbar-close-icon {
+  font-size: 1.5em;
+  align-self: flex-end;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* Menu list styling */
+.navbar-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.navbar-menu-list li {
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 1em;
+  text-align: left;
+}
+
+.navbar-menu-list li:hover {
+  text-decoration: underline;
+}
+
+/* Right Cart Sidebar styling */
+.navbar-cart-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+.navbar-cart-title {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
