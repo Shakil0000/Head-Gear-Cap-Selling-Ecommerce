@@ -15,6 +15,38 @@ function ProductDetails({ toggleCart }) {
       .catch(error => console.error('Error fetching product details:', error));
   }, [id]);
 
+
+  const handleAddToCart = () => {
+    // Retrieve existing cart items from localStorage (or initialize an empty array)
+    const existingCart = JSON.parse(localStorage.getItem("headGearShakilCart")) || [];
+  
+    // Create the product object to add
+    const newProduct = {
+      id: product.id,
+      image: product.Pic,
+      title: product.Title,
+      price: product.AfterDiscountPrice,
+      quantity: 1, // Default quantity
+    };
+  
+    // Check if the product is already in the cart
+    const productExists = existingCart.find(item => item.id === product.id);
+  
+    if (productExists) {
+      // If the product already exists, update its quantity
+      productExists.quantity += 1;
+    } else {
+      // Otherwise, add the new product to the cart
+      existingCart.push(newProduct);
+    }
+  
+    // Save the updated cart back to localStorage
+    localStorage.setItem("headGearShakilCart", JSON.stringify(existingCart));
+    toggleCart();
+  };
+  
+
+
   const handleBuyNow = () => {
     // Assume you're adding the product to an array
     const productsArray = [{
@@ -31,6 +63,7 @@ function ProductDetails({ toggleCart }) {
         products: productsArray,
       },
     });
+    console.log(productsArray);
   };
 
   if (!product) {
@@ -55,7 +88,7 @@ function ProductDetails({ toggleCart }) {
             Price: <span className="ProductDetails-lineThrough">${product.Price}</span> ${product.AfterDiscountPrice}
           </p>
           <div className="ProductDetails-buttons">
-            <button onClick={toggleCart} className="ProductDetails-addToCart">Add to Cart</button>
+            <button  onClick={handleAddToCart} className="ProductDetails-addToCart">Add to Cart</button>
             <button onClick={handleBuyNow} className="ProductDetails-buyNow">Buy It Now</button>
           </div>
           <div className="ProductDetails-info">

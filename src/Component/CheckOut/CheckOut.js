@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CheckOut.css";
 import { useLocation } from "react-router-dom";
 
 const CheckOut = () => {
   const location = useLocation();
   const { products } = location.state || {}; // Destructure products from location state
+  const [couponCode, setCouponCode] = useState("");
+  const [subtotal, setSubtotal] = useState(
+    products?.reduce((total, product) => total + product.price * product.quantity, 0) || 0
+  );
+  const [shippingCost, setShippingCost] = useState(100); // Default shipping cost
+  const total = subtotal + shippingCost;
+
+  const handleApplyCoupon = () => {
+    // Logic for applying coupon (adjust subtotal based on the coupon code)
+    if (couponCode === "DISCOUNT10") {
+      setSubtotal((prevSubtotal) => prevSubtotal * 0.9); // Example: 10% discount
+    }
+  };
+
+  const handleShippingChange = (event) => {
+    const value = event.target.value;
+    if (value === "insideDhaka") {
+      setShippingCost(80);
+    } else if (value === "outsideDhaka") {
+      setShippingCost(100);
+    } else if (value === "sameDay") {
+      setShippingCost(120);
+    }
+  };
 
   return (
     <div className="CheckOut-container">
@@ -52,50 +76,50 @@ const CheckOut = () => {
         <div className="CheckOut-section">
           <h2>Shipping Method</h2>
           <label>
-            <input type="radio" name="shipping" value="insideDhaka" />
-            Inside Dhaka
+            <input
+              type="radio"
+              name="shipping"
+              value="insideDhaka"
+              onChange={handleShippingChange}
+            />
+            Inside Dhaka (80 Taka)
           </label>
           <label>
-            <input type="radio" name="shipping" value="outsideDhaka" />
-            Outside Dhaka
+            <input
+              type="radio"
+              name="shipping"
+              value="outsideDhaka"
+              onChange={handleShippingChange}
+            />
+            Outside Dhaka (100 Taka)
           </label>
           <label>
-            <input type="radio" name="shipping" value="sameDay" />
-            Same Day Delivery
+            <input
+              type="radio"
+              name="shipping"
+              value="sameDay"
+              onChange={handleShippingChange}
+            />
+            Same Day Delivery (120 Taka)
           </label>
         </div>
         <div className="CheckOut-section">
           <h2>Payment</h2>
           <label>
             <input type="radio" name="payment" value="cashOnDelivery" />
-            Cash on Delivery
+            Cash on Delivery 
           </label>
           <label>
             <input type="radio" name="payment" value="sslCommerz" />
-            SSLCommerz
+            SSLCommerz (Unavailable Right Now)
           </label>
           <label>
             <input type="radio" name="payment" value="bkash" />
-            bKash
+            bKash (Payment to 01617222451)
           </label>
           <label>
             <input type="radio" name="payment" value="nagad" />
-            Nagad
-          </label>
-        </div>
-        <div className="CheckOut-section">
-          <h2>Billing Address</h2>
-          <label>
-            <input type="radio" name="billingAddress" value="sameAsShipping" />
-            Same as Shipping Address
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="billingAddress"
-              value="differentBilling"
-            />
-            Use a Different Billing Address
+            Nagad (Marchent Pay to 01819322200)
           </label>
         </div>
       </div>
@@ -122,6 +146,42 @@ const CheckOut = () => {
               </div>
             </div>
           ))}
+        <div className="Checkout-total">
+          {/* Row 1: Coupon */}
+          <div className="Checkout-row">
+            <input
+              type="text"
+              placeholder="Enter Coupon Code"
+              value={couponCode}
+              onChange={(e) => setCouponCode(e.target.value)}
+              className="Checkout-couponInput"
+            />
+            <button onClick={handleApplyCoupon} className="Checkout-applyButton">
+              Apply
+            </button>
+          </div>
+
+          {/* Row 2: Subtotal */}
+          <div className="Checkout-row">
+            <span>Subtotal</span>
+            <span>${subtotal.toFixed(2)}</span>
+          </div>
+
+          {/* Row 3: Shipping */}
+          <div className="Checkout-row">
+            <span>Shipping</span>
+            <span>${shippingCost}</span>
+          </div>
+
+          {/* Row 4: Total */}
+          <div className="Checkout-row">
+            <span>Total</span>
+            <span>${total.toFixed(2)}</span>
+          </div>
+
+          {/* Confirm Order Button */}
+          <button className="Checkout-confirmButton">Confirm Order</button>
+        </div>
       </div>
     </div>
   );

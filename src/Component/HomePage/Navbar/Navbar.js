@@ -51,7 +51,6 @@ function Navbar({ cartOpen, toggleCart }) {
       {cartOpen && (
         <div className="navbar-cart-menu">
           <FaTimes className="navbar-close-icon" onClick={toggleCart} /> {/* Close Icon */}
-          <h2 className="navbar-cart-title">Your Cart</h2>
            <Cart></Cart>
         </div>
       )}

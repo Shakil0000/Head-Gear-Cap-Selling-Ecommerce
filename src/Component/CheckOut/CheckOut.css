@@ -154,3 +154,117 @@
     padding: 2px; /* Consistent padding */
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Checkout Total Section Styling */
+.Checkout-total {
+  margin-top: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Row Styling */
+.Checkout-row {
+  display: flex;
+  justify-content: space-between; /* Align items to the edges */
+  align-items: center;
+  margin-bottom: 15px; /* Space between rows */
+}
+
+/* Coupon Input Styling */
+.Checkout-couponInput {
+  width: 70%; /* Input width */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Checkout-couponInput:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+}
+
+/* Apply Button Styling */
+.Checkout-applyButton {
+  width: 25%; /* Button width */
+  padding: 10px;
+  margin-left: 5%; /* Space between input and button */
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.Checkout-applyButton:hover {
+  background-color: #0056b3;
+}
+
+/* Text Styling in Rows */
+.Checkout-row span {
+  font-size: 18px;
+  color: #333;
+}
+
+.Checkout-row span:last-child {
+  font-weight: bold; /* Highlight values */
+}
+
+/* Confirm Order Button */
+.Checkout-confirmButton {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #28a745;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.Checkout-confirmButton:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .Checkout-row {
+    flex-direction: row; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
+    gap: 10px; /* Add spacing between stacked items */
+  }
+
+  .Checkout-couponInput,
+  .Checkout-applyButton {
+    width: 100%; /* Full width for inputs and buttons */
+    margin: 0; /* Remove margin for better stacking */
+  }
+}

@@ -1,0 +1,170 @@
+/* Cart container */
+.Cart-container {
+    width: 100%;
+    padding-right: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    color: black; /* Set text color to black */
+  }
+  
+  .Cart-container h2 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: black; /* Ensure header text is black */
+  }
+  
+  /* Cart items container */
+  .Cart-items {
+    max-height: 400px;
+    overflow-y: scroll;
+  }
+  
+  /* Individual cart item */
+  .Cart-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: black; /* Ensure text color in each item is black */
+  }
+  
+  /* Row for image and title */
+  .Cart-itemRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .Cart-itemImage {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .Cart-itemDetails h3 {
+    font-size: 14px;
+    margin: 0;
+    font-weight: bold;
+    color: black; /* Ensure title text is black */
+    text-align: left;
+  }
+  
+  /* Quantity control */
+  .Cart-itemQuantity {
+    display: flex;
+    margin-left: 58px;
+    margin-bottom: 10px;
+  }
+  
+  .Cart-quantityButton {
+    width: 30px;
+    height: 30px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    color: black; /* Ensure the text on buttons is black */
+  }
+  
+  .Cart-quantityNumber {
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black; /* Ensure quantity number is black */
+  }
+  
+  /* Price styling */
+  .Cart-itemPrice {
+    width: 100px;
+    height: auto;
+    font-size: 14px;
+    font-weight: bold;
+    color: black; /* Ensure price text is black */
+    padding-left: 0px;
+    margin-left: 40px;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+/* Subtotal container */
+.Cart-subtotal {
+    width: 100%;
+    height: 100%;
+    padding-right: 25px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 20px;
+    color: black;
+    font-size: 14px;
+  }
+  
+  /* Subtotal and total amount positioning */
+  .Cart-subtotal span:first-of-type {
+    font-weight: bold;
+  }
+  
+  .Cart-subtotal span {
+    display: inline-block;
+  }
+  
+  .Cart-subtotal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Terms text */
+  .Cart-subtotal p {
+    font-size: 12px;
+    color: black;
+    margin-bottom: 10px;
+  }
+  
+  /* Checkbox and terms label */
+  .Cart-subtotal input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .Cart-subtotal span:last-of-type {
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 5px;
+    color: black;
+  }
+  
+  /* Checkout button */
+  .Cart-subtotal button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .Cart-subtotal button:hover {
+    background-color: #0056b3;
+  }
+  
