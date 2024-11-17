@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 
 const CheckOut = () => {
   const location = useLocation();
-  const { products } = location.state || {}; // Destructure products from location state
+  const { products } = location.state || {};
   const [couponCode, setCouponCode] = useState("");
   const [subtotal, setSubtotal] = useState(
     products?.reduce((total, product) => total + product.price * product.quantity, 0) || 0
@@ -13,7 +13,6 @@ const CheckOut = () => {
   const total = subtotal + shippingCost;
 
   const handleApplyCoupon = () => {
-    // Logic for applying coupon (adjust subtotal based on the coupon code)
     if (couponCode === "DISCOUNT10") {
       setSubtotal((prevSubtotal) => prevSubtotal * 0.9); // Example: 10% discount
     }
@@ -30,47 +29,125 @@ const CheckOut = () => {
     }
   };
 
+  const handleConfirmOrder = async (event) => {
+    event.preventDefault(); // Prevent default form submission
+    const form = event.target;
+
+    const orderDetails = {
+      phoneNumber: form.phone.value,
+      orderTrackNumber: `ORD-${Date.now()}`,
+      orderInformation: {
+        contact: form.phone.value,
+        delivery: {
+          country: form.country.value,
+          optionalName: form.optionalName.value,
+          name: form.name.value,
+          address: form.address.value,
+          specialNote: form.specialNote.value,
+          cityOrDistrict: form.cityOrDistrict.value,
+          postalCode: form.postalCode.value,
+          phone: form.secondaryPhone.value,
+        },
+        shippingMethod: form.shipping.value,
+        paymentMethod: form.payment.value,
+        products: products,
+        subtotal: subtotal.toFixed(2),
+        shippingCost: shippingCost,
+        total: total.toFixed(2),
+      },
+    };
+
+    try {
+      const response = await fetch("http://localhost:5000/createOrder", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(orderDetails),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        alert(`Order created successfully! Order Track Number: ${data.orderTrackNumber}`);
+        window.location.reload(); 
+      } else {
+        alert("Failed to create order.");
+      }
+    } catch (error) {
+      console.error("Error creating order:", error);
+      alert("An error occurred while creating the order.");
+    }
+  };
+
   return (
     <div className="CheckOut-container">
       {/* Left Side */}
-      <div className="CheckOut-left">
+      <form className="CheckOut-left" onSubmit={handleConfirmOrder}>
         <div className="CheckOut-section">
           <h2>Contact</h2>
           <input
             type="text"
+            name="phone"
             placeholder="Phone Number"
             className="CheckOut-input"
+            required
           />
         </div>
         <div className="CheckOut-section">
           <h2>Delivery</h2>
-          <input type="text" placeholder="Country" className="CheckOut-input" />
           <input
             type="text"
+            name="country"
+            placeholder="Country"
+            className="CheckOut-input"
+            required
+          />
+          <input
+            type="text"
+            name="optionalName"
             placeholder="Optional Name"
             className="CheckOut-input"
           />
-          <input type="text" placeholder="Name" className="CheckOut-input" />
-          <input type="text" placeholder="Address" className="CheckOut-input" />
           <input
             type="text"
+            name="name"
+            placeholder="Name"
+            className="CheckOut-input"
+            required
+          />
+          <input
+            type="text"
+            name="address"
+            placeholder="Address"
+            className="CheckOut-input"
+            required
+          />
+          <input
+            type="text"
+            name="specialNote"
             placeholder="Special Note (Optional)"
             className="CheckOut-input"
           />
           <input
             type="text"
+            name="cityOrDistrict"
             placeholder="City or District"
             className="CheckOut-input"
+            required
           />
           <input
             type="text"
+            name="postalCode"
             placeholder="Postal Code"
             className="CheckOut-input"
+            required
           />
           <input
             type="text"
+            name="secondaryPhone"
             placeholder="Phone Number"
             className="CheckOut-input"
+            required
           />
         </div>
         <div className="CheckOut-section">
@@ -81,6 +158,7 @@ const CheckOut = () => {
               name="shipping"
               value="insideDhaka"
               onChange={handleShippingChange}
+              required
             />
             Inside Dhaka (80 Taka)
           </label>
@@ -106,8 +184,8 @@ const CheckOut = () => {
         <div className="CheckOut-section">
           <h2>Payment</h2>
           <label>
-            <input type="radio" name="payment" value="cashOnDelivery" />
-            Cash on Delivery 
+            <input type="radio" name="payment" value="cashOnDelivery" required />
+            Cash on Delivery
           </label>
           <label>
             <input type="radio" name="payment" value="sslCommerz" />
@@ -119,27 +197,25 @@ const CheckOut = () => {
           </label>
           <label>
             <input type="radio" name="payment" value="nagad" />
-            Nagad (Marchent Pay to 01819322200)
+            Nagad (Merchant Pay to 01819322200)
           </label>
         </div>
-      </div>
+        <button type="submit" className="Checkout-confirmButton">
+          Confirm Order
+        </button>
+      </form>
 
       {/* Right Side */}
       <div className="CheckOut-right">
         {products &&
           products.map((product, index) => (
             <div className="Checkout-product" key={index}>
-              {/* Column 1: Image */}
               <img
                 src={`http://localhost:5000/uploads/${product.image}`}
                 alt={product.title}
                 className="Checkout-productImage"
               />
-
-              {/* Column 2: Title */}
               <div className="Checkout-title">{product.title}</div>
-
-              {/* Column 3: Price and Quantity */}
               <div className="Checkout-priceQuantity">
                 <span>Price: ${product.price}</span>
                 <span>Quantity: {product.quantity}</span>
@@ -147,7 +223,6 @@ const CheckOut = () => {
             </div>
           ))}
         <div className="Checkout-total">
-          {/* Row 1: Coupon */}
           <div className="Checkout-row">
             <input
               type="text"
@@ -156,31 +231,26 @@ const CheckOut = () => {
               onChange={(e) => setCouponCode(e.target.value)}
               className="Checkout-couponInput"
             />
-            <button onClick={handleApplyCoupon} className="Checkout-applyButton">
+            <button
+              type="button"
+              onClick={handleApplyCoupon}
+              className="Checkout-applyButton"
+            >
               Apply
             </button>
           </div>
-
-          {/* Row 2: Subtotal */}
           <div className="Checkout-row">
             <span>Subtotal</span>
             <span>${subtotal.toFixed(2)}</span>
           </div>
-
-          {/* Row 3: Shipping */}
           <div className="Checkout-row">
             <span>Shipping</span>
             <span>${shippingCost}</span>
           </div>
-
-          {/* Row 4: Total */}
           <div className="Checkout-row">
             <span>Total</span>
             <span>${total.toFixed(2)}</span>
           </div>
-
-          {/* Confirm Order Button */}
-          <button className="Checkout-confirmButton">Confirm Order</button>
         </div>
       </div>
     </div>
