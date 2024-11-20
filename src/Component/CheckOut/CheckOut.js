@@ -217,7 +217,7 @@ const CheckOut = () => {
               />
               <div className="Checkout-title">{product.title}</div>
               <div className="Checkout-priceQuantity">
-                <span>Price: ${product.price}</span>
+                <span>Price: Tk {product.price}</span>
                 <span>Quantity: {product.quantity}</span>
               </div>
             </div>
@@ -241,15 +241,15 @@ const CheckOut = () => {
           </div>
           <div className="Checkout-row">
             <span>Subtotal</span>
-            <span>${subtotal.toFixed(2)}</span>
+            <span>Tk {subtotal.toFixed(2)}</span>
           </div>
           <div className="Checkout-row">
             <span>Shipping</span>
-            <span>${shippingCost}</span>
+            <span>Tk {shippingCost}</span>
           </div>
           <div className="Checkout-row">
             <span>Total</span>
-            <span>${total.toFixed(2)}</span>
+            <span>Tk {total.toFixed(2)}</span>
           </div>
         </div>
       </div>

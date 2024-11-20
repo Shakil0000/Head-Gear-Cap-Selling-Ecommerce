@@ -20,6 +20,7 @@ import { Route, Routes } from 'react-router-dom';
 import ProductDetails from './Component/ProductDetails/ProductDetails';
 import { useState } from 'react';
 import CheckOut from './Component/CheckOut/CheckOut';
+import Search from './Component/Search/Search';
 
 function App() {
   const [cartOpen, setCartOpen] = useState(false);
@@ -45,15 +46,16 @@ function App() {
                                     <SectionFour></SectionFour>
                                     <SectionFive></SectionFive>
                                     <SectionSix></SectionSix>
-                                    <TrandingCap></TrandingCap>
+                                    <NewArrival></NewArrival>
                                     <SectionEight></SectionEight>
                                     <SectionNine></SectionNine>
-                                    <AddItem></AddItem>
-                                    <NewArrival></NewArrival>
+                                   
 
         </> } />
+        <Route path="/new-arrival" element={<NewArrival/>} />
         <Route path="/productDetails/:id" element={<ProductDetails toggleCart={toggleCart}/>} />
         <Route path="/checkout" element={<CheckOut/>} />
+        <Route path="/search" element={<Search/>} />
       </Routes>
        
        <Footer></Footer>

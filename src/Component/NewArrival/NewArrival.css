@@ -1,4 +1,18 @@
 /* NewArrival.css */
+.NewArrival-h1{
+  font-family: Quantico;
+  font: 20px;
+  font-weight: 700;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin: 0 0 .625em;
+  line-height: 1.4;
+  color: #1a1a1a;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
 
 .NewArrival-container {
     display: grid;
@@ -11,7 +25,7 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 16px;
-    text-align: center;
+    text-align: left;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
@@ -30,7 +44,7 @@
   
   .NewArrival-price {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     gap: 8px;
     font-size: 1rem;

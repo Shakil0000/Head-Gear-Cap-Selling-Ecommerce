@@ -28,6 +28,14 @@
   text-align: center;
 }
 
+.navBar-title-link{
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+}
+
 .navBar-title {
   font-size: 1.5em;
   font-weight: bold;
@@ -124,4 +132,27 @@
 .navbar-cart-title {
   font-size: 1.3em;
   margin-bottom: 20px;
+}
+
+.navbar-search-input {
+  width: 90px;
+  height: 40px;
+  font-size: 14px;
+  border: 2px solid #f39c12; /* Cute orange border */
+  border-radius: 10px; /* Rounded corners */
+  background-color: #fff; /* White background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  outline: none;
+  transition: width 0.3s ease, border-color 0.3s ease;
+}
+
+/* On hover, make the border darker */
+.navbar-search-input:hover {
+  border-color: #d35400; /* Darker orange */
+}
+
+/* On focus, expand width and highlight the border */
+.navbar-search-input:focus {
+  width: 120px; /* Expand the width */
+  border-color: #e67e22; /* Highlighted orange */
 }
