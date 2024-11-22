@@ -20,7 +20,7 @@
   
   @media (max-width: 768px) {
     .sectionFour-container {
-      grid-template-columns: 1fr;
+      /* grid-template-columns: 1fr; */
       width: 100%;
     }
   }

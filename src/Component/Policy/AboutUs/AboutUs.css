@@ -1,0 +1,62 @@
+.aboutUs-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .aboutUs-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  
+  .aboutUs-text {
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
+  
+  .aboutUs-section {
+    margin-bottom: 30px;
+  }
+  
+  .aboutUs-subheading {
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .aboutUs-list {
+    list-style-type: disc;
+    margin-left: 20px;
+    font-size: 1rem;
+    text-align: left;
+  }
+  
+  .aboutUs-board {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .aboutUs-member {
+    flex: 1 1 300px;
+    background: #f9f9f9;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .aboutUs-role {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  

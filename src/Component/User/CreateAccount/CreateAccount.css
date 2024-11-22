@@ -1,0 +1,59 @@
+/* Container for the Create Account page */
+.create-account-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #eef2f3;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Title styling for Create Account */
+  .create-account-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Form container styling */
+  .create-account-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Input styling */
+  .create-account-input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+  
+  .create-account-input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Button styling */
+  .create-account-button {
+    padding: 12px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .create-account-button:hover {
+    background-color: #218838;
+  }
+  

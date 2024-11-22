@@ -1,0 +1,100 @@
+.OrderTracker-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.OrderTracker-heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.OrderTracker-input-section {
+  display: flex;
+  flex-direction: column; /* Stack inputs on smaller screens */
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 500px; /* Restrict the maximum width */
+}
+
+.OrderTracker-select,
+.OrderTracker-input {
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%; /* Take full width */
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+.OrderTracker-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%; /* Ensure button aligns with inputs */
+  max-width: 200px; /* Limit button size */
+  align-self: center; /* Center the button */
+}
+
+.OrderTracker-button:hover {
+  background-color: #0056b3;
+}
+
+.OrderTracker-loading,
+.OrderTracker-error {
+  font-size: 1rem;
+  color: #ff0000;
+  text-align: center;
+}
+
+.OrderTracker-details {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  max-width: 400px;
+  width: 100%; /* Make details responsive */
+  box-sizing: border-box;
+}
+
+.OrderTracker-details p {
+  margin: 5px 0;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .OrderTracker-input-section {
+    flex-direction: row; /* Arrange inputs side by side on larger screens */
+    gap: 10px;
+  }
+
+  .OrderTracker-button {
+    width: auto; /* Allow button to shrink to its content */
+    margin-left: 10px; /* Space between inputs and button */
+  }
+}
+
+@media (max-width: 480px) {
+  .OrderTracker-heading {
+    font-size: 1.5rem; /* Reduce font size for smaller screens */
+  }
+
+  .OrderTracker-input-section {
+    gap: 5px; /* Smaller gap between inputs */
+  }
+
+  .OrderTracker-input {
+    font-size: 0.9rem; /* Slightly smaller font size */
+  }
+
+  .OrderTracker-button {
+    font-size: 0.9rem; /* Reduce button size */
+    padding: 8px 16px;
+  }
+}

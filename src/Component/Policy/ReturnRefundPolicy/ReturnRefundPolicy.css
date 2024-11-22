@@ -1,0 +1,38 @@
+.returnRefundPolicy-container {
+    text-align: left;
+    margin: 20px auto;
+    max-width: 800px;
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .returnRefundPolicy-container h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .returnRefundPolicy-container h2 {
+    font-size: 1.5rem;
+    color: #555;
+    margin: 15px 0 10px;
+  }
+  
+  .returnRefundPolicy-container ul {
+    margin-left: 20px;
+    list-style-type: disc;
+  }
+  
+  .returnRefundPolicy-container a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .returnRefundPolicy-container a:hover {
+    text-decoration: underline;
+  }
+  

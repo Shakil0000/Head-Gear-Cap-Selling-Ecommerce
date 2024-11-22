@@ -1,0 +1,67 @@
+.Profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .Profile-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  .Profile-title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .Profile-email {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .Profile-logout-btn {
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .Profile-logout-btn:hover {
+    background-color: #ff4a4a;
+  }
+  
+  .Profile-orders-section {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .Profile-order-list {
+    margin-top: 10px;
+  }
+  
+  .Profile-order-item {
+    background: #f0f8ff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .Profile-order-item p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  

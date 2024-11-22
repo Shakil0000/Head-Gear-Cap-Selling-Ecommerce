@@ -24,10 +24,10 @@ function Footer() {
 
         {/* Social Media and SSLCommerz Section */}
         <div className="footer-social">
+        <img src="https://cdn.shopify.com/s/files/1/0625/3238/7051/files/SSLCOMMERZ_Pay_With_logo_All_Size_Aug_21-02.png?v=1675022838" alt="SSLCommerz" className="footer-sslcommerz" />
           <div className="footer-social-icons">
             <FaFacebook className="footer-icon" />
             <FaInstagram className="footer-icon" />
-            <img src="https://cdn.shopify.com/s/files/1/0625/3238/7051/files/SSLCOMMERZ_Pay_With_logo_All_Size_Aug_21-02.png?v=1675022838" alt="SSLCommerz" className="footer-sslcommerz" />
           </div>
           <p className="footer-copyright">© 2024, Head Gear. All rights reserved.</p>
         </div>

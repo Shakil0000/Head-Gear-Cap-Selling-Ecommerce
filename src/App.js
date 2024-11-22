@@ -21,6 +21,22 @@ import ProductDetails from './Component/ProductDetails/ProductDetails';
 import { useState } from 'react';
 import CheckOut from './Component/CheckOut/CheckOut';
 import Search from './Component/Search/Search';
+import OrderDeliveryPolicy from './Component/Policy/OrderDeliveryPolicy/OrderDeliveryPolicy';
+import AboutUs from './Component/Policy/AboutUs/AboutUs';
+import TermsAndCondition from './Component/Policy/TermsAndCondition/TermsAndCondition';
+import ReturnRefundPolicy from './Component/Policy/ReturnRefundPolicy/ReturnRefundPolicy';
+import PrivacyPolicy from './Component/Policy/PrivacyPolicy/PrivacyPolicy';
+import ShippingPolicy from './Component/Policy/ShippingPolicy/ShippingPolicy';
+import BlogsPage from './Component/Policy/BlogsPage/BlogsPage';
+import LoyaltyProgram from './Component/Policy/LoyaltyProgram/LoyaltyProgram';
+import FAQ from './Component/Policy/FAQ/FAQ';
+import Login from './Component/User/Login/Login';
+import CreateAccount from './Component/User/CreateAccount/CreateAccount';
+import ForgotPassword from './Component/User/ForgotPassword/ForgotPassword';
+import Temp from './Component/Temp/Temp';
+import Profile from './Component/User/Profile/Profile';
+import OrderTracker from './Component/OrderTracker/OrderTracker';
+
 
 function App() {
   const [cartOpen, setCartOpen] = useState(false);
@@ -52,10 +68,29 @@ function App() {
                                    
 
         </> } />
+
         <Route path="/new-arrival" element={<NewArrival/>} />
         <Route path="/productDetails/:id" element={<ProductDetails toggleCart={toggleCart}/>} />
         <Route path="/checkout" element={<CheckOut/>} />
         <Route path="/search" element={<Search/>} />
+
+        <Route path="/order-and-delivery-policy" element={<OrderDeliveryPolicy/>} />
+        <Route path="/about-us" element={<AboutUs/>} />
+        <Route path="/terms-and-conditions" element={<TermsAndCondition/>} />
+        <Route path="/return-and-refund-policy" element={<ReturnRefundPolicy/>} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/shipping-policy" element={<ShippingPolicy />} />
+        <Route path="/blog/first-cap-brand" element={<BlogsPage />} />
+        <Route path="/loyalty-program" element={<LoyaltyProgram />} />
+        <Route path="/order-tracker" element={<OrderTracker />} />
+        <Route path="/faq" element={<FAQ />} />
+
+
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/create-account" element={<CreateAccount />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/temp" element={<Temp />} />
       </Routes>
        
        <Footer></Footer>

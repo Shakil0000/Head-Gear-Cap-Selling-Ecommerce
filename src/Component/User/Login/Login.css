@@ -1,0 +1,71 @@
+/* Shared container styling for all pages */
+.login-container,
+.create-account-container,
+.forgot-password-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.login-title,
+.create-account-title,
+.forgot-password-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.login-form,
+.create-account-form,
+.forgot-password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-input,
+.create-account-input,
+.forgot-password-input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-button,
+.create-account-button,
+.forgot-password-button,
+.login-link-button {
+  padding: 10px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-button:hover,
+.create-account-button:hover,
+.forgot-password-button:hover,
+.login-link-button:hover {
+  background-color: #0056b3;
+}
+
+.login-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.login-link-button {
+  background-color: transparent;
+  color: #007BFF;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
